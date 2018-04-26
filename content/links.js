@@ -22,7 +22,6 @@ $(window).on("load", function () {
 	                $("body").html(body);
 	                $("title").html(title);
 	                onLoad();
-	                onAdmLoad();
 	                completion = 100;
 	                loaded = true;
 
