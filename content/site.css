@@ -1,0 +1,102 @@
+@font-face{
+    font-family: "aexon";
+    src: url("fonts/aexon.ttf")
+}
+
+body{
+    background: initial;
+}
+html {
+    background: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.center{
+    text-align: center !important;
+}
+.left{
+    text-align: left !important;
+}
+.logo{
+    display: inline-block;
+}
+.block{
+    display: block;
+}
+.logo-small {
+    width: 128px;
+    height: 128px;
+}
+.nav{
+    text-align: center;
+}
+.nav .header{
+    display: inline-block;
+}
+.aexon {
+    font-family: "aexon";
+}
+.navigation {
+    letter-spacing: 5px;
+    color: white;
+}.home-menu {
+    display: inline-block;
+}
+.logo-menu {
+    font-size: 64px;
+    text-decoration: underline;
+}
+a.logo-link {
+    color: white;
+}
+.home-menu a {
+    color: white;
+    font-size: x-large;
+}
+.home-menu.home{
+    display:none;
+}
+.card {
+    max-width: 300px;
+    margin: 0 auto;
+}
+.divider {
+    position: relative;
+    top: -3px;
+}
+.contacts-page {
+    padding-top: 2em;
+    color:white;
+    letter-spacing: 3px;
+}
+.click-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.7);
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px white;
+}
+@media (max-width: 576px) {
+    .navigation .logo{
+        display: none;
+    }
+    .home-menu{
+        display: block;
+    }
+    .home-menu.home {
+        display: initial;
+    }
+    .logo-menu {
+        font-size: 200%;
+        border-bottom: solid white;
+        text-decoration: none;
+    }
+    .divider{
+        display: none;
+    }
+}
