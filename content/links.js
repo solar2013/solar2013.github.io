@@ -96,7 +96,8 @@ $(window).on("load", function () {
 
 var onLoad = function onLoad() {
     AAYW.Settings = AAYW.Settings || {};
-    AAYW.Settings.DebugMode = true;
+    AAYW.Settings.AjaxLinksTimeout = 1000;
+    AAYW.Settings.DebugMode = false;
     AAYW.Engine.Links.Apply();
 };
 
