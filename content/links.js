@@ -86,7 +86,7 @@ $(window).on("load", function () {
 		        redirect(url);
 		    },
 			Apply: function () {
-				$("a").click(handler);
+				$("a:not(.ignore-js)").click(handler);
 
 				window.onpopstate = popstate;
 			},
