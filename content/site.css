@@ -84,6 +84,19 @@ a.logo-link {
 .links a.ignore-js {
     display: block;
 }
+.card-image-fix{
+    width: calc(100% - 1px);
+    position: relative;
+    left: 1px;
+}
+.coming-soon{
+    font-weight: bold;
+    height: 144px;
+    padding-top: 20%;
+}
+.word-break{
+    word-break: break-all;
+}
 @media (max-width: 576px) {
     .navigation .logo{
         display: none;
@@ -101,5 +114,9 @@ a.logo-link {
     }
     .divider{
         display: none;
+    }
+    .card-image-fix{
+        width: calc(100%);
+        left: 0px;
     }
 }
