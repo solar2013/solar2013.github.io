@@ -7,8 +7,13 @@ var singeView = function(){
         var allCards = document.querySelectorAll('.card');
 
         allCards.forEach(function(card){
-            if (card == targetCard)
+            if (card == targetCard){
+                var albumTitle = targetCard.querySelector('.card-title').innerText || '';
+
+                document.title = "SOLAR*13 - "+albumTitle;
+
                 return;
+            }
 
             card.style.display = 'none';
         });
