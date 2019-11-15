@@ -61,6 +61,14 @@ a.logo-link {
 .card {
     max-width: 300px;
     margin: 0 auto;
+    transition: opacity 0.2s ease-in-out;
+    overflow: hidden;
+}
+.card:hover .card-image{
+    transform: scale(1.07);
+}
+.card-image{
+    transition: transform 0.2s ease-in-out;
 }
 .divider {
     position: relative;
@@ -97,6 +105,9 @@ a.logo-link {
 .word-break{
     word-break: break-all;
 }
+.card-group:hover .card:not(:hover){
+    opacity: 0.75;
+}
 @media (max-width: 576px) {
     .navigation .logo{
         display: none;
@@ -116,6 +127,7 @@ a.logo-link {
         display: none;
     }
     .card-image-fix{
+        min-width: 298px;
         width: calc(100%);
         left: 0px;
     }

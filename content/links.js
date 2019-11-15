@@ -19,17 +19,21 @@ $(window).on("load", function () {
 
 	                history.pushState(null, title, href);
 
-	                $("body").html(body);
 	                $("title").html(title);
-	                onLoad();
-	                completion = 100;
-	                loaded = true;
-
-	                $(".click-bar").show();
-	                $(".click-bar").css("width", 100 + "%");
-
-	                if (callback)
-	                    callback();
+					$("body").fadeOut(100, function(){
+						$("body").html(body);
+						$("body").fadeIn(100);
+						onLoad();
+						completion = 100;
+						loaded = true;
+	
+						$(".click-bar").show();
+						$(".click-bar").css("width", 100 + "%");
+	
+						if (callback)
+							callback();
+					});
+	                
 	            },
 	            error: function (data) {
 	                document.location.href = href;
