@@ -8,7 +8,7 @@ $(window).on("load", function () {
 	        var loaded = false;
 	        $.ajax({
 	            method: 'GET',
-	            url: href,
+	            url: href+".html",
 	            success: function (data) {
 	                var body = data
                         .substring(data.indexOf("body>"), data.indexOf("</body"))
@@ -19,17 +19,31 @@ $(window).on("load", function () {
 
 	                history.pushState(null, title, href);
 
-	                $("title").html(title);
-					$("body").html(body);
-					onLoad();
-					completion = 100;
-					loaded = true;
+					var onContentDone = () => {
+						onLoad();
+						completion = 100;
+						loaded = true;
+	
+						if (callback)
+							callback();
+					};
 
-					$(".click-bar").show();
-					$(".click-bar").css("width", 100 + "%");
+					if ($(".container").length > 0){
+						$(".container").fadeOut(500, function(){
+							$("title").html(title);
+							$("body").html(body);
+							$(".container").hide();
+							$(".container").fadeIn(500);
+							
+							onContentDone();
+						});
+					}
+					else{
+						$("title").html(title);
+						$("body").html(body);
+					}
 
-					if (callback)
-						callback();
+
 	                
 	            },
 	            error: function (data) {
@@ -47,8 +61,6 @@ $(window).on("load", function () {
 	                setTimeout(function () { $(".click-bar").fadeOut(700); }, 300);
 	            }
 	            else if (completion < AAYW.Settings.AjaxLinksTimeout) {
-	                var displayedCompletion = Math.min(75, completion);
-	                $(".click-bar").css("width", displayedCompletion + "%");
 	            }
 	            else {
 	                document.location.href = href;
