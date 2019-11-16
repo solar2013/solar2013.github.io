@@ -41,6 +41,8 @@ $(window).on("load", function () {
 					else{
 						$("title").html(title);
 						$("body").html(body);
+
+						onContentDone();
 					}
 
 
