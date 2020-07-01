@@ -108,6 +108,9 @@ a.logo-link {
 .card-group:hover .card:not(:hover){
     opacity: 0.75;
 }
+.card-img-top{
+    display: none;
+}
 @media (max-width: 576px) {
     .navigation .logo{
         display: none;
