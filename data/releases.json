@@ -1,0 +1,94 @@
+{
+    "releases": [
+        {
+            "name": "THE WAY I SEE THINGS",
+            "code": "twist",
+            "releaseType": "EP",
+            "artist": "chz",
+            "releaseYear": 2018,
+            "genre": "Experimental Hip-Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/the-way-i-see-things",
+                "Spotify": "https://open.spotify.com/album/0Uap4W0b1e4WCNy61GWtyq",
+                "iTunes": "https://itunes.apple.com/ua/album/the-way-i-see-things-ep/1376302577",
+                "Deezer": "https://www.deezer.com/en/album/62132722",
+                "Tidal": "https://listen.tidal.com/album/87926649",
+                "Play Music": "https://play.google.com/store/music/album/chz_The_Way_I_See_Things?id=B73ba3mlkpzgd33blbvfdh75rby"
+            }
+        },
+
+        {
+            "name": "Smile (cover)",
+            "code": "smile_cover",
+            "releaseType": "Single",
+            "artist": "chz",
+            "releaseYear": 2018,
+            "genre": "Cloud Rap / Hip-Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/smile-originally-performed-by-bladee",
+                "YouTube": "https://www.youtube.com/watch?v=pxlFTNOnAu0"
+            }
+        },
+
+        {
+            "name": "Panic? Attack!",
+            "code": "panic-attack",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2019,
+            "genre": "Experimental Hip-Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/panic-attack",
+                "Spotify": "https://open.spotify.com/album/5zREF4UoMbvkN82OUEypMd",
+                "iTunes": "https://itunes.apple.com/ua/album/panic-attack/1449488858",
+                "Deezer": "https://www.deezer.com/en/album/84324882",
+                "Tidal": "https://listen.tidal.com/album/102443490",
+                "Play Music": "https://play.google.com/music/m/B4putsga6t3xls4vj67ww2msjhe?t=Panic_Attack_-_chz"
+            }
+        },
+
+        {
+            "name": "REBOUND19",
+            "code": "rebound19",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2020,
+            "genre": "Hip-Hop / Rap",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/rebound19",
+                "Spotify": "https://open.spotify.com/album/6fFQ6Z6a56JyJzpWpJE65e",
+                "Apple Music": "https://music.apple.com/ua/album/19-rebound-19/1495352608",
+                "Deezer": "https://www.deezer.com/en/album/127321702",
+                "Tidal": "https://listen.tidal.com/album/128607550",
+                "Play Music": "https://play.google.com/music/listen?u=0#/album/Buqbzinbbdozl5h64uc4gs7ib3y/chz/19+REBOUND+19"
+            }
+        },
+
+        {
+            "name": "РЕЙВ НА ОБОЛОНИ",
+            "code": "rna",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2020,
+            "genre": "Rave",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/reyv-na-oboloni",
+                "Apple Music": "https://music.apple.com/ua/album/%D1%80%D0%B5%D0%B9%D0%B2-%D0%BD%D0%B0-%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8/1518788959",
+                "Deezer": "https://www.deezer.com/en/album/154996422",
+                "Spotify": "https://open.spotify.com/album/7awqDNuWKW0ABTAUgjmtmb",
+                "Play Music": "https://play.google.com/music/listen?u=0#/album/B3wzz45tr7dmd343az5pzgsizzi/chz/%D0%A0%D0%95%D0%99%D0%92+%D0%9D%D0%90+%D0%9E%D0%91%D0%9E%D0%9B%D0%9E%D0%9D%D0%98"
+            }
+        },
+
+        {
+            "name": "SKYLINE",
+            "code": "skyline",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2020,
+            "genre": "Hip-Hop / Rap",
+            "services": null
+        }
+
+    ]
+}

@@ -26,6 +26,9 @@ $(window).on("load", function () {
 	
 						if (callback)
 							callback();
+
+						if (loadReleases)
+							loadReleases();
 					};
 
 					if ($(".container").length > 0){
