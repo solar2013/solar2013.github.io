@@ -11,6 +11,7 @@ var applySingleAlbumView = function(){
                 var albumTitle = targetCard.querySelector('.card-title').innerText || '';
 
                 document.title = "SOLAR*13 - "+albumTitle;
+                document.querySelector("#releases-content").className = "center";
 
                 return;
             }
