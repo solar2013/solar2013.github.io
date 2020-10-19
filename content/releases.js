@@ -52,6 +52,7 @@ var loadReleases = () => {
 
         container.innerHTML = result;
         
+        applySingleAlbumView();
         lazyLoad();
     });
 }

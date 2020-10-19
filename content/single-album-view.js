@@ -1,4 +1,4 @@
-var singeView = function(){
+var applySingleAlbumView = function(){
     var hash = document.location.hash;
 
     if (hash) {
@@ -19,5 +19,3 @@ var singeView = function(){
         });
     }
 }
-
-$(window).on("load", singeView);
