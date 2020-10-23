@@ -87,7 +87,13 @@
             "artist": "chz",
             "releaseYear": 2020,
             "genre": "Hip-Hop / Rap",
-            "services": null
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/skyline",
+                "Apple Music": "https://music.apple.com/us/album/skyline/1534712117",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_kcvp0uURPKwtcVm4tqXv5NZesU5eHTtes",
+                "Spotify": "https://open.spotify.com/album/4Q4iSNcjCcFrAQ8BEZmTnl"
+
+            }
         }
 
     ]
