@@ -92,11 +92,6 @@ a.logo-link {
 .links a.ignore-js {
     display: block;
 }
-.card-image-fix{
-    width: calc(100% - 1px);
-    position: relative;
-    left: 1px;
-}
 .coming-soon{
     font-weight: bold;
     height: 144px;
@@ -113,6 +108,9 @@ a.logo-link {
 }
 #releases-content .card-group{
     margin-bottom: 16px;
+}
+.card{
+    border:none;
 }
 @media (max-width: 576px) {
     .navigation .logo{
