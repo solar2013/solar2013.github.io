@@ -1,4 +1,15 @@
 var loadReleases = () => {
+    Object.defineProperty(Array.prototype, 'chunk', {
+        value: function(chunkSize) {
+          var array = this;
+          return [].concat.apply([],
+            array.map(function(elem, i) {
+              return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+            })
+          );
+        }
+      });
+
     let render = (template, values) => {
         let renderedHtml = document.querySelector(`script#${template}`).innerHTML;;
 
@@ -25,30 +36,40 @@ var loadReleases = () => {
     .then(x => x.json())
     .then(data => {
         var releases = data.releases.reverse();
+        var groups = releases.chunk(3);
         var result = "";
-        releases.forEach(releaseData => {
-            releaseData.links = "";
-            if (releaseData.services)   {
-                let serviceNames = Object.keys(releaseData.services);
 
-                serviceNames.forEach(name => {
-                    var value = releaseData.services[name];
-                    
-                    var linkHtml = render("link-template", {
-                        key: name,
-                        value: value
+        groups.forEach(group => {
+            var groupHtml = "";
+
+            group.forEach(releaseData => {
+                releaseData.links = "";
+                if (releaseData.services)   {
+                    let serviceNames = Object.keys(releaseData.services);
+    
+                    serviceNames.forEach(name => {
+                        var value = releaseData.services[name];
+                        
+                        var linkHtml = render("link-template", {
+                            key: name,
+                            value: value
+                        });
+    
+                        releaseData.links += linkHtml;
                     });
+    
+                }
+                else{
+                    releaseData.links = "Coming soon...";
+                }
+    
+                groupHtml += render("card-template", releaseData);
+            });
 
-                    releaseData.links += linkHtml;
-                });
 
-            }
-            else{
-                releaseData.links = "Coming soon...";
-            }
 
-            result += render("card-template", releaseData);
-        });
+            result += render("group-template", {content: groupHtml});
+        })
 
         container.innerHTML = result;
         

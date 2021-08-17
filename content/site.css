@@ -111,6 +111,9 @@ a.logo-link {
 .card-img-top{
     display: none;
 }
+#releases-content .card-group{
+    margin-bottom: 16px;
+}
 @media (max-width: 576px) {
     .navigation .logo{
         display: none;
