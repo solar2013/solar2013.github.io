@@ -105,7 +105,7 @@ a.logo-link {
 .word-break{
     word-break: break-all;
 }
-.card-group:hover .card:not(:hover){
+.container:hover .card:not(:hover){
     opacity: 0.75;
 }
 .card-img-top{
