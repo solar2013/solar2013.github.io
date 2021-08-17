@@ -94,6 +94,16 @@
                 "Spotify": "https://open.spotify.com/album/4Q4iSNcjCcFrAQ8BEZmTnl"
 
             }
+        },
+
+        {
+            "name": "RAVE2",
+            "code": "rave2",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2021,
+            "genre": "Rave",
+            "services": null
         }
 
     ]
