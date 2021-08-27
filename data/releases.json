@@ -92,7 +92,6 @@
                 "Apple Music": "https://music.apple.com/us/album/skyline/1534712117",
                 "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_kcvp0uURPKwtcVm4tqXv5NZesU5eHTtes",
                 "Spotify": "https://open.spotify.com/album/4Q4iSNcjCcFrAQ8BEZmTnl"
-
             }
         },
 
@@ -103,7 +102,12 @@
             "artist": "chz",
             "releaseYear": 2021,
             "genre": "Rave",
-            "services": null
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/rave2",
+                "Apple Music": "https://music.apple.com/us/album/rave2-ep/1579883483",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_kpN-mVcdkQbj2hDrli2bDY2mwARJs2kpo",
+                "Spotify": "https://open.spotify.com/album/68DeuJI6YX3oGFG2nuL7Ot"
+            }
         }
 
     ]
