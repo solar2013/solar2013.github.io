@@ -7,7 +7,8 @@ var loadReleases = () => {
               return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
             })
           );
-        }
+        },
+        configurable: true
       });
 
     let render = (template, values) => {
