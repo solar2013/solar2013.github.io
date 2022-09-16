@@ -100,8 +100,8 @@ a.logo-link {
 .word-break{
     word-break: break-all;
 }
-.container:hover .card:not(:hover){
-    opacity: 0.75;
+.container:has(.card:hover) .card:not(:hover){
+    opacity: 0.66;
 }
 .card-img-top{
     display: none;

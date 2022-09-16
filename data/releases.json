@@ -120,6 +120,18 @@
             "services": {
                 "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/delusion"
             }
+        },
+
+        {
+            "name": "Abandoned Compilation Vol. 1",
+            "code": "acv1",
+            "releaseType": "Compilation",
+            "artist": "chz",
+            "releaseYear": 2022,
+            "genre": "Hip-Hop / EDM / Ambient",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/abandoned-compilation-vol-1"
+            }
         }
 
     ]

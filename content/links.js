@@ -6,9 +6,10 @@ $(window).on("load", function () {
 	AAYW.Engine.Links = AAYW.Engine.Links || (function (window) {
 	    function redirect(href, callback) {
 	        var loaded = false;
+			var goingToHome = document.location.origin + "/" == href;
 	        $.ajax({
 	            method: 'GET',
-	            url: href+".html",
+	            url: goingToHome ? href : href+".html",
 	            success: function (data) {
 	                var body = data
                         .substring(data.indexOf("body>"), data.indexOf("</body"))
@@ -31,21 +32,26 @@ $(window).on("load", function () {
 							loadReleases();
 					};
 
-					if ($(".container").length > 0){
+					if ($(".container").length > 0 && !goingToHome){
 						$(".container").fadeOut(500, function(){
 							$("title").html(title);
+							window.LazyLoadReady = false;
 							$("body").html(body);
 							$(".container").hide();
-							$(".container").fadeIn(500);
+							$(".container").fadeIn(500, () => window.LazyLoadReady = true);
 							
 							onContentDone();
 						});
 					}
 					else{
-						$("title").html(title);
-						$("body").html(body);
-
-						onContentDone();
+						$("body").fadeOut(500, function(){
+							$("title").html(title);
+							window.LazyLoadReady = false;
+							$("body").html(body);
+							$("body").fadeIn(500, () => window.LazyLoadReady = true);
+							
+							onContentDone();
+						});
 					}
 
 
