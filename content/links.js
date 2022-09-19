@@ -1,10 +1,8 @@
-$(window).on("load", function () {
-	window.AAYW = window.AAYW || {};
+var onLoad = function onLoad() {
+	window.Links = window.Links || {};
 
-	AAYW.Engine = AAYW.Engine || {};
-
-	AAYW.Engine.Links = AAYW.Engine.Links || (function (window) {
-	    function redirect(href, callback) {
+	Links.Engine = Links.Engine || (function (window) {
+	    var redirect = function (href) {
 	        var loaded = false;
 			var goingToHome = document.location.origin + "/" == href;
 	        $.ajax({
@@ -22,11 +20,7 @@ $(window).on("load", function () {
 
 					var onContentDone = () => {
 						onLoad();
-						completion = 100;
 						loaded = true;
-	
-						if (callback)
-							callback();
 
 						if (loadReleases)
 							loadReleases();
@@ -62,46 +56,34 @@ $(window).on("load", function () {
 	            }
 	        });
 
-	        $(".click-bar").show();
-	        var completion = 0;
+	        var timer = 0;
 	        interval = setInterval(function () {
 
-	            completion++;
+	            timer++;
+				if (timer < Links.Settings.AjaxLinksTimeout)
+					return;
+
 	            if (loaded == true) {
 	                clearInterval(interval);
-	                setTimeout(function () { $(".click-bar").fadeOut(700); }, 300);
-	            }
-	            else if (completion < AAYW.Settings.AjaxLinksTimeout) {
 	            }
 	            else {
 	                document.location.href = href;
 	            }
 
-	        }, 15);
+	        }, 200);
 	    };
 
-	    function handler(e) {
-            if (e)
-			    e.preventDefault();
+	    var customHandler = function (e) {
+            e.preventDefault();
 
-			var self = this;
-			if (AAYW.Settings.DebugMode)
-				var startingTime = new Date().getTime();
-			var interval = null;
-
-			if (self.href && self.href != document.location.href && self.href != document.location.href + "#") {
-			    redirect(self.href, function () {
-			        if (AAYW.Settings.DebugMode) {
-			            console.log({
-			                href: self.href,
-			                pageLoadingTime: new Date().getTime() - startingTime,
-			            });
-			        }
-			    });
+			if (this.href 
+				&& this.href != document.location.href 
+				&& this.href != document.location.href + "#") {
+			    redirect(this.href);
 			}
 		};
 
-	    function popstate(event) {
+	    var popstate_proxy = function (event) {
 	        location.reload();
 	    };
 
@@ -110,19 +92,17 @@ $(window).on("load", function () {
 		        redirect(url);
 		    },
 			Apply: function () {
-				$("a:not(.ignore-js)").click(handler);
+				$("a:not(.ignore-js)").click(customHandler);
 
-				window.onpopstate = popstate;
+				window.onpopstate = popstate_proxy;
 			},
 		};
 	})(this);
-});
 
-var onLoad = function onLoad() {
-    AAYW.Settings = AAYW.Settings || {};
-    AAYW.Settings.AjaxLinksTimeout = 1000;
-    AAYW.Settings.DebugMode = false;
-    AAYW.Engine.Links.Apply();
+    Links.Settings = Links.Settings || {};
+    Links.Settings.AjaxLinksTimeout = 300;
+    Links.Settings.DebugMode = false;
+    Links.Engine.Apply();
 };
 
 $(window).on("load", onLoad);
