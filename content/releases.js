@@ -1,15 +1,15 @@
 var loadReleases = () => {
     Object.defineProperty(Array.prototype, 'chunk', {
-        value: function(chunkSize) {
-          var array = this;
-          return [].concat.apply([],
-            array.map(function(elem, i) {
-              return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
-            })
-          );
+        value: function (chunkSize) {
+            var array = this;
+            return [].concat.apply([],
+                array.map(function (elem, i) {
+                    return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+                })
+            );
         },
         configurable: true
-      });
+    });
 
     let render = (template, values) => {
         let renderedHtml = document.querySelector(`script#${template}`).innerHTML;;
@@ -28,55 +28,68 @@ var loadReleases = () => {
 
     var container = document.querySelector("#releases-content");
 
-    if (container == null){
+    if (container == null) {
         lazyLoad();
         return;
     }
 
     fetch("/data/releases.json")
-    .then(x => x.json())
-    .then(data => {
-        var releases = data.releases.reverse();
-        var groups = releases.chunk(3);
-        var result = "";
+        .then(x => x.json())
+        .then(data => {
+            var releases = data.releases.reverse();
+            var groups = releases.chunk(3);
+            var result = "";
 
-        groups.forEach(group => {
-            var groupHtml = "";
+            groups.forEach(group => {
+                var groupHtml = "";
 
-            group.forEach(releaseData => {
-                releaseData.links = "";
-                if (releaseData.services)   {
-                    let serviceNames = Object.keys(releaseData.services);
-    
-                    serviceNames.forEach(name => {
-                        var value = releaseData.services[name];
-                        
-                        var linkHtml = render("link-template", {
-                            key: name,
-                            value: value
+                group.forEach(releaseData => {
+                    releaseData.links = "";
+                    if (releaseData.services) {
+                        let serviceNames = Object.keys(releaseData.services);
+
+                        serviceNames.forEach(name => {
+                            var value = releaseData.services[name];
+
+                            var linkHtml = render("link-template", {
+                                key: name,
+                                value: value
+                            });
+
+                            releaseData.links += linkHtml;
                         });
-    
-                        releaseData.links += linkHtml;
+
+                    }
+                    else {
+                        releaseData.links = "Coming soon...";
+                    }
+
+                    groupHtml += render("card-template", releaseData);
+                });
+
+
+
+                result += render("group-template", { content: groupHtml });
+            })
+
+            container.innerHTML = result;
+
+            applySingleAlbumView();
+            lazyLoad();
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            $(entry.target).addClass("in-screen");
+                        }
                     });
-    
-                }
-                else{
-                    releaseData.links = "Coming soon...";
-                }
-    
-                groupHtml += render("card-template", releaseData);
-            });
+                });
 
+                $('.card').toArray().forEach(card => observer.observe(card));
+            }
 
-
-            result += render("group-template", {content: groupHtml});
-        })
-
-        container.innerHTML = result;
-        
-        applySingleAlbumView();
-        lazyLoad();
-    });
+        });
 }
 
 

@@ -11,7 +11,6 @@ window.LazyLoadInterval = window.LazyLoadInterval || setInterval(function(){
         window.LazyLoadReady = false;   
         topImage.onload = () => window.LazyLoadReady = true;
         topImage.src = imageUrl;
-        $(topImage).show();
     }
 }, 100);
 
