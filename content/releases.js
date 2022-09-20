@@ -1,24 +1,21 @@
-var loadReleases = () => {
+window.LoadReleases = window.LoadReleases || (() => {
     Object.defineProperty(Array.prototype, 'chunk', {
         value: function (chunkSize) {
-            var array = this;
             return [].concat.apply([],
-                array.map(function (elem, i) {
-                    return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+                this.map((elem, i) => {
+                    return i % chunkSize ? [] : [this.slice(i, i + chunkSize)];
                 })
             );
         },
-        configurable: true
-    });
+        configurable: true});
 
     let render = (template, values) => {
         let renderedHtml = document.querySelector(`script#${template}`).innerHTML;;
-
-        let keys = Object.keys(values);
+        const keys = Object.keys(values);
 
         keys.forEach(key => {
-            var value = values[key];
-            var replacementRegEx = new RegExp(`{${key.toString().toLowerCase()}}`, 'gi');
+            const value = values[key];
+            const replacementRegEx = new RegExp(`{${key.toString().toLowerCase()}}`, 'gi');
 
             renderedHtml = renderedHtml.replace(replacementRegEx, value);
         });
@@ -26,22 +23,22 @@ var loadReleases = () => {
         return renderedHtml;
     }
 
-    var container = document.querySelector("#releases-content");
+    const container = document.querySelector("#releases-content");
 
     if (container == null) {
-        lazyLoad();
+        window.LazyLoadInitializer();
         return;
     }
 
     fetch("/data/releases.json")
         .then(x => x.json())
         .then(data => {
-            var releases = data.releases.reverse();
-            var groups = releases.chunk(3);
-            var result = "";
+            const releases = data.releases.reverse();
+            const groups = releases.chunk(3);
+            let result = "";
 
             groups.forEach(group => {
-                var groupHtml = "";
+                let groupHtml = "";
 
                 group.forEach(releaseData => {
                     releaseData.links = "";
@@ -49,9 +46,9 @@ var loadReleases = () => {
                         let serviceNames = Object.keys(releaseData.services);
 
                         serviceNames.forEach(name => {
-                            var value = releaseData.services[name];
+                            const value = releaseData.services[name];
 
-                            var linkHtml = render("link-template", {
+                            const linkHtml = render("link-template", {
                                 key: name,
                                 value: value
                             });
@@ -74,8 +71,8 @@ var loadReleases = () => {
 
             container.innerHTML = result;
 
-            applySingleAlbumView();
-            lazyLoad();
+            window.applySingleAlbumView();
+            window.LazyLoadInitializer();
 
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver(entries => {
@@ -90,7 +87,7 @@ var loadReleases = () => {
             }
 
         });
-}
+});
 
 
-$(window).on("load", loadReleases);
+$(window).on("load", window.LoadReleases);

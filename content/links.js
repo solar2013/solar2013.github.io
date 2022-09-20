@@ -1,63 +1,48 @@
-var onLoad = function onLoad() {
+window.LinksOnLoad = window.LinksOnLoad || (() => {
 	window.Links = window.Links || {};
 
-	Links.Engine = Links.Engine || (function (window) {
-	    var redirect = function (href) {
-	        var loaded = false;
-			var goingToHome = document.location.origin + "/" == href;
+	Links.Engine = Links.Engine || ((window) => {
+	    const redirect = function (href) {
+	        let loaded = false;
+			const goingToHome = document.location.origin + "/" == href;
 	        $.ajax({
 	            method: 'GET',
 	            url: goingToHome ? href : href+".html",
-	            success: function (data) {
-	                var body = data
+	            success: data => {
+	                const body = data
                         .substring(data.indexOf("body>"), data.indexOf("</body"))
                         .replace("body>", "");
-	                var title = data
+	                const title = data
                          .substring(data.indexOf("title>"), data.indexOf("</title"))
                          .replace("title>", "");
 
 	                history.pushState(null, title, href);
 
-					var onContentDone = () => {
-						onLoad();
+					if (goingToHome)
+						$(".navigation").fadeOut(500);
+
+					$(".container").fadeOut(500, function(){
+						$("title").html(title);
+						window.LazyLoadReady = false;
+						$("body").html(body);
+						$(".container").hide();
+						$(".container").fadeIn(500, () => window.LazyLoadReady = true);
+						
+						window.LinksOnLoad();
 						loaded = true;
 
-						if (loadReleases)
-							loadReleases();
-					};
-
-					if ($(".container").length > 0 && !goingToHome){
-						$(".container").fadeOut(500, function(){
-							$("title").html(title);
-							window.LazyLoadReady = false;
-							$("body").html(body);
-							$(".container").hide();
-							$(".container").fadeIn(500, () => window.LazyLoadReady = true);
-							
-							onContentDone();
-						});
-					}
-					else{
-						$("body").fadeOut(500, function(){
-							$("title").html(title);
-							window.LazyLoadReady = false;
-							$("body").html(body);
-							$("body").fadeIn(500, () => window.LazyLoadReady = true);
-							
-							onContentDone();
-						});
-					}
-
-
+						if (window.LoadReleases)
+							window.LoadReleases();
+					});
 	                
 	            },
-	            error: function (data) {
+	            error: () => {
 	                document.location.href = href;
 	            }
 	        });
 
-	        var timer = 0;
-	        interval = setInterval(function () {
+	        let timer = 0;
+	        interval = setInterval(() => {
 
 	            timer++;
 				if (timer < Links.Settings.AjaxLinksTimeout)
@@ -73,19 +58,19 @@ var onLoad = function onLoad() {
 	        }, 200);
 	    };
 
-	    var customHandler = function (e) {
+	    const customHandler = e => {
             e.preventDefault();
 
-			if (this.href 
-				&& this.href != document.location.href 
-				&& this.href != document.location.href + "#") {
-			    redirect(this.href);
+			const href = e.target.href;
+
+			if (href 
+				&& href != document.location.href 
+				&& href != document.location.href + "#") {
+			    redirect(href);
 			}
 		};
 
-	    var popstate_proxy = function (event) {
-	        location.reload();
-	    };
+	    const popstate_proxy = () => location.reload();
 
 		return {
 		    RedirectTo: function (url) {
@@ -103,6 +88,6 @@ var onLoad = function onLoad() {
     Links.Settings.AjaxLinksTimeout = 300;
     Links.Settings.DebugMode = false;
     Links.Engine.Apply();
-};
+});
 
-$(window).on("load", onLoad);
+$(window).on("load", window.LinksOnLoad);

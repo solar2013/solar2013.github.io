@@ -1,17 +1,18 @@
-var applySingleAlbumView = function(){
-    var hash = document.location.hash;
+window.applySingleAlbumView = window.applySingleAlbumView || (() => {
+    const hash = document.location.hash;
 
     if (hash) {
-        var elementId = document.location.hash.replace('#', '');
-        var targetCard = document.getElementById('#release_'+elementId);
-        var allCards = document.querySelectorAll('.card');
+        const elementId = document.location.hash.replace('#', '');
+        const targetCard = document.getElementById('#release_'+elementId);
+        const allCards = document.querySelectorAll('.card');
 
-        allCards.forEach(function(card){
+        allCards.forEach(card => {
             if (card == targetCard){
-                var albumTitle = targetCard.querySelector('.card-title').innerText || '';
+                const albumTitle = targetCard.querySelector('.card-title').innerText || '';
 
                 document.title = "SOLAR*13 - "+albumTitle;
                 document.querySelector("#releases-content").className = "center";
+                card.className += " force-center";
 
                 return;
             }
@@ -19,4 +20,4 @@ var applySingleAlbumView = function(){
             card.style.display = 'none';
         });
     }
-}
+});
