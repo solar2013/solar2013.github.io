@@ -140,7 +140,12 @@
             "releaseType": "Album",
             "artist": "chz",
             "releaseYear": 2023,
-            "genre": "Hip-Hop / EDM"
+            "genre": "Hip-Hop / EDM",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/dissociation-contemplation",
+                "Deezer": "https://www.deezer.com/en/album/395839147",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_ntTGI6DpyzQZRWBj3PIIZXcdY2tf7StCM"
+            }
         }
 
     ]
