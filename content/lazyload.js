@@ -6,7 +6,7 @@ window.LazyLoadInterval = window.LazyLoadInterval || setInterval(() => {
 
     const topImage = window.LazyLoadQueue.shift();
 
-    if (topImage){
+    if (topImage && topImage.parentElement.style.display != 'none'){
         var imageUrl = $(topImage).data("src");
         window.LazyLoadReady = false;   
         topImage.onload = () => window.LazyLoadReady = true;
