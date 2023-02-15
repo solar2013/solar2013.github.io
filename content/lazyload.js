@@ -7,7 +7,7 @@ window.LazyLoadInterval = window.LazyLoadInterval || setInterval(() => {
     const topImage = window.LazyLoadQueue.shift();
 
     if (topImage && topImage.parentElement.style.display != 'none'){
-        var imageUrl = $(topImage).data("src");
+        var imageUrl = topImage.dataset["src"];
         window.LazyLoadReady = false;   
         topImage.onload = () => window.LazyLoadReady = true;
         topImage.src = imageUrl;
@@ -27,4 +27,4 @@ window.LazyLoadInitializer = window.LazyLoadInitializer || (() => {
     });
 });
 
-$(window).on("load", window.LazyLoadInitializer);
+onLoad(window.LazyLoadInitializer);

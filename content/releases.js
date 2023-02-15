@@ -1,14 +1,4 @@
 window.LoadReleases = window.LoadReleases || (() => {
-    Object.defineProperty(Array.prototype, 'chunk', {
-        value: function (chunkSize) {
-            return [].concat.apply([],
-                this.map((elem, i) => {
-                    return i % chunkSize ? [] : [this.slice(i, i + chunkSize)];
-                })
-            );
-        },
-        configurable: true});
-
     let render = (template, values) => {
         let renderedHtml = document.querySelector(`script#${template}`).innerHTML;;
         const keys = Object.keys(values);
@@ -78,16 +68,16 @@ window.LoadReleases = window.LoadReleases || (() => {
                 const observer = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            $(entry.target).addClass("in-screen");
+                            entry.target.className += " in-screen";
                         }
                     });
                 });
 
-                $('.card').toArray().forEach(card => observer.observe(card));
+                document.querySelectorAll('.card').forEach(card => observer.observe(card));
             }
 
         });
 });
 
 
-$(window).on("load", window.LoadReleases);
+onLoad(window.LoadReleases);
