@@ -148,6 +148,15 @@
                 "Spotify": "https://open.spotify.com/album/3TAyB53qHidpYYnI4cscXQ",
                 "Apple Music": "https://music.apple.com/ph/album/dissociation-contemplation-ep/1664741812"
             }
+        },
+
+        {
+            "name": "OST ADHD",
+            "code": "ostadhd",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2023,
+            "genre": "Breakcore"
         }
 
     ]
