@@ -16,7 +16,6 @@ window.LoadReleases = window.LoadReleases || (() => {
     const container = document.querySelector("#releases-content");
 
     if (container == null) {
-        window.LazyLoadInitializer();
         return;
     }
 
@@ -62,7 +61,6 @@ window.LoadReleases = window.LoadReleases || (() => {
             container.innerHTML = result;
 
             window.applySingleAlbumView();
-            window.LazyLoadInitializer();
 
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver(entries => {
