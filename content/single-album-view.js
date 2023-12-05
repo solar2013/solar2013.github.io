@@ -17,7 +17,8 @@ window.applySingleAlbumView = window.applySingleAlbumView || (() => {
                 return;
             }
 
-            card.style.display = 'none';
+            card.querySelector('img').src = '';
+            card.remove();
         });
     }
 });
