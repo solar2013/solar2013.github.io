@@ -8,6 +8,7 @@
     <link href="content/images/favicon.png" rel="shortcut icon" type="image/png">
     <link href="content/lib/core.css" rel="stylesheet">
     <link href="content/site.css" rel="stylesheet">
+    <link href="content/releases.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
 
     <script type="text/html" id="card-template">
         <div class="card" id="#release_{code}">
-            <img class="card-img-top card-image img-responsive" src="content/images/{code}.png"
+            <img class="card-img-top card-image img-responsive {code}" src="content/images/{code}.png"
                 alt="{name}">
             <div class="card-body">
                 <h5 class="card-title">{name}</h5>
