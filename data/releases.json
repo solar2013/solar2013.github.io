@@ -180,7 +180,22 @@
                 "Apple Music": "https://music.apple.com/ph/album/winter-will-come-and-save-me-again-single/1722079803",
                 "Spotify": "https://open.spotify.com/album/7xEOFaB9RzNB8PhG1SkvdV"
             }
-        }
+        },
 
+        {
+            "name": "sirens // banshee",
+            "code": "sirens-banshee",
+            "releaseType": "Single",
+            "artist": "chz",
+            "releaseYear": 2024,
+            "genre": "Electronic / Hip Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sirens-banshee",
+                "Deezer": "https://www.deezer.com/en/album/561569792",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_lGFtmvFxDIUm4mNZ_T77_lgFROOzS1qPg",
+                "Apple Music": "https://music.apple.com/ph/album/sirens-banshee-single/1736431137",
+                "Spotify": "https://open.spotify.com/album/1lhe09XQz7fMw7ylaotYux"
+            }
+        }
     ]
 }
