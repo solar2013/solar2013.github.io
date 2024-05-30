@@ -196,6 +196,15 @@
                 "Apple Music": "https://music.apple.com/ph/album/sirens-banshee-single/1736431137",
                 "Spotify": "https://open.spotify.com/album/1lhe09XQz7fMw7ylaotYux"
             }
+        },
+
+        {
+            "name": "Desolation.Again.Again.",
+            "code": "daa",
+            "releaseType": "Album",
+            "artist": "chz",
+            "releaseYear": 2024,
+            "genre": "Electronic / Hip Hop"
         }
     ]
 }
