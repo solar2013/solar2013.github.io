@@ -204,7 +204,14 @@
             "releaseType": "Album",
             "artist": "chz",
             "releaseYear": 2024,
-            "genre": "Electronic / Hip Hop"
+            "genre": "Electronic / Hip Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/desolationagainagain",
+                "Deezer": "https://www.deezer.com/en/album/591151692",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nfXiFCCYqeaCFpbcqh9q7kMty-OBe3XWI",
+                "Apple Music": "https://music.apple.com/ph/album/desolation-again-again-ep/1747938207",
+                "Spotify": "https://open.spotify.com/album/50x01Qw7f2K3ALAvEBOkCH"
+            }
         }
     ]
 }
