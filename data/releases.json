@@ -212,6 +212,15 @@
                 "Apple Music": "https://music.apple.com/ph/album/desolation-again-again-ep/1747938207",
                 "Spotify": "https://open.spotify.com/album/50x01Qw7f2K3ALAvEBOkCH"
             }
+        },
+
+        {
+            "name": "stay with me",
+            "code": "swm",
+            "releaseType": "Single",
+            "artist": "chz",
+            "releaseYear": 2025,
+            "genre": "Breakcore / Jungle"
         }
     ]
 }
