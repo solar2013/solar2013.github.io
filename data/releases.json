@@ -220,7 +220,14 @@
             "releaseType": "Single",
             "artist": "chz",
             "releaseYear": 2025,
-            "genre": "Breakcore / Jungle"
+            "genre": "Breakcore / Jungle",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/stay-with-me",
+                "Deezer": "https://www.deezer.com/en/album/713162181",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nuXaSFr2Qg7wXN4wiRg9CRMeFRhEXdAO8",
+                "Apple Music": "https://music.apple.com/ph/album/stay-with-me-single/1796389194",
+                "Spotify": "https://open.spotify.com/album/5MrXYgWuEMktWySYTh8jlN"
+            }
         }
     ]
 }
