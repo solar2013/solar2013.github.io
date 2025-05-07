@@ -236,7 +236,14 @@
             "releaseType": "Single",
             "artist": "chz",
             "releaseYear": 2025,
-            "genre": "Electronic / Hip Hop"
+            "genre": "Electronic / Hip Hop",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/crystal-soul-drop",
+                "Deezer": "https://www.deezer.com/en/album/747641991",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_kPXaVgrh_HxfrvG7-Q6k3DcjZUhwWGs9I",
+                "Apple Music": "https://music.apple.com/ph/album/crystal-soul-drop-single/1810664295",
+                "Spotify": "https://open.spotify.com/album/6F9h0K1F7GjQmSk6pYv7K7"
+            }
         }
     ]
 }
