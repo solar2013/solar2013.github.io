@@ -244,6 +244,15 @@
                 "Apple Music": "https://music.apple.com/ph/album/crystal-soul-drop-single/1810664295",
                 "Spotify": "https://open.spotify.com/album/6F9h0K1F7GjQmSk6pYv7K7"
             }
+        },
+
+        {
+            "name": "sand.",
+            "code": "sand",
+            "releaseType": "EP",
+            "artist": "chz",
+            "releaseYear": 2025,
+            "genre": "Breakcore / Jungle"
         }
     ]
 }
