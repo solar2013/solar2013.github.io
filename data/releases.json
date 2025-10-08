@@ -252,7 +252,14 @@
             "releaseType": "EP",
             "artist": "chz",
             "releaseYear": 2025,
-            "genre": "Breakcore / Jungle"
+            "genre": "Breakcore / Jungle",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/sets/sand",
+                "Deezer": "https://www.deezer.com/en/album/828124101",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_k4sg8-iCIr-RrYIBkIh8kNwZhSOe4A2OA",
+                "Apple Music": "https://music.apple.com/ph/album/sand-ep/1842426304",
+                "Spotify": "https://open.spotify.com/album/2PACWaThNaW2FAEEM4SyEs"
+            }
         }
     ]
 }
