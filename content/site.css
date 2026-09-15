@@ -1,9 +1,9 @@
-@font-face{
-    font-family: "aexon";
-    src: url("fonts/aexon.ttf")
+@font-face {
+    font-family: 'aexon';
+    src: url('fonts/aexon.ttf');
 }
 
-body{
+body {
     background: initial;
 }
 html {
@@ -13,19 +13,54 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
-.center{
+html.single-album-view::before {
+    content: '';
+    position: fixed;
+    inset: -24px;
+    z-index: 0;
+    background-image: var(--single-album-image);
+    background-position: center;
+    background-size: cover;
+    filter: blur(18px);
+    opacity: 0.25;
+}
+html.single-album-view .card {
+    box-shadow: 0 0 36px rgba(0, 0, 0, 0.8);
+}
+.body-content {
+    position: relative;
+    z-index: 1;
+}
+.center {
     text-align: center !important;
 }
-.force-center{
+.force-center {
     margin: 0 auto !important;
 }
-.left{
+.left {
     text-align: left !important;
 }
-.logo{
+.logo {
     display: inline-block;
+    color: white;
+    font-family: 'aexon';
+    font-size: 64px;
 }
-.block{
+.logo.big {
+    font-size: 13rem;
+    margin-top: 12rem;
+    margin-bottom: 4rem;
+}
+.logo-title,
+.logo-year {
+    line-height: 0.82;
+    white-space: nowrap;
+}
+.logo-divider {
+    border-top: 2px solid currentColor;
+    margin: 28px 0 38px;
+}
+.block {
     display: block;
 }
 .logo-small {
@@ -33,7 +68,7 @@ html {
     height: 128px;
 }
 .aexon {
-    font-family: "aexon";
+    font-family: 'aexon';
 }
 .navigation {
     letter-spacing: 5px;
@@ -49,8 +84,8 @@ html {
 a.logo-link {
     color: white;
 }
-.home-menu.home{
-    display:none;
+.home-menu.home {
+    display: none;
 }
 .card {
     max-width: 300px;
@@ -58,10 +93,10 @@ a.logo-link {
     transition: opacity 0.2s ease-in-out;
     overflow: hidden;
 }
-.card:hover .card-image{
+.card:hover .card-image {
     transform: scale(1.07);
 }
-.card-image{
+.card-image {
     transition: transform 0.2s ease-in-out;
 }
 .divider {
@@ -70,58 +105,70 @@ a.logo-link {
 }
 .contacts-page {
     padding-top: 2em;
-    color:white;
+    color: white;
     letter-spacing: 3px;
 }
 .links a.ignore-js {
     display: block;
 }
-.coming-soon{
+.coming-soon {
     font-weight: bold;
     height: 144px;
     padding-top: 20%;
 }
-.container:has(.card:hover) .card:not(:hover){
+.container:has(.card:hover) .card:not(:hover) {
     opacity: 0.66;
 }
-.card-img-top{
+.card-img-top {
     min-height: 300px;
     box-shadow: inset 0 0 0px 200px grey;
 }
-#releases-content .card-group{
+#releases-content .card-group {
     margin-bottom: 16px;
 }
-.card{
-    border:none;
+.card {
+    border: none;
 }
-.card:not(.in-screen){
+.card:not(.in-screen) {
     opacity: 0 !important;
 }
-.card.in-screen{
+.card.in-screen {
     opacity: 1;
     transition: all 0.5s;
 }
 .navigation a {
     color: white;
     font-size: x-large;
-    background: 
-		linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
-		linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
-	background-size: 100% 0.1em, 0 0.1em;
-    background-position: 100% 100%, 0 100%;
-     background-repeat: no-repeat;
-	transition: background-size 400ms;
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 1)
+        );
+    background-size:
+        100% 0.1em,
+        0 0.1em;
+    background-position:
+        100% 100%,
+        0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
 }
-  
-.navigation a:hover, .navigation a:focus {
-    background-size: 0 0.1em, 100% 0.1em;
+
+.navigation a:hover,
+.navigation a:focus {
+    background-size:
+        0 0.1em,
+        100% 0.1em;
     text-decoration: none;
-  }
+}
 @media (max-width: 576px) {
-    .navigation .logo{
+    .navigation .logo {
         display: none;
     }
-    .home-menu{
+    .home-menu {
         display: block;
     }
     .home-menu.home {
@@ -131,7 +178,7 @@ a.logo-link {
         font-size: 2.5rem;
         text-decoration: none;
     }
-    .divider{
+    .divider {
         display: none;
     }
 }
