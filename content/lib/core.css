@@ -1,4 +1,6 @@
-*, ::after, ::before {
+*,
+::after,
+::before {
     box-sizing: border-box;
 }
 :root {
@@ -7,8 +9,13 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    --font-family-monospace:
+        SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
 }
 html {
     font-family: sans-serif;
@@ -20,7 +27,10 @@ html {
 }
 body {
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -50,10 +60,10 @@ body {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
-.card-group>.card {
+.card-group > .card {
     margin-bottom: 15px;
 }
 img {
@@ -74,17 +84,34 @@ img {
     margin-bottom: 0.75rem;
 }
 
-.h5, h5 {
+.h5,
+h5 {
     font-size: 1.25rem;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 0.5rem;
     font-family: inherit;
     font-weight: 500;
     line-height: 1.2;
     color: inherit;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
@@ -102,10 +129,11 @@ a {
     margin-bottom: 0;
 }
 .text-muted {
-    color: #6c757d!important;
+    color: #6c757d !important;
 }
 
-.small, small {
+.small,
+small {
     font-size: 80%;
     font-weight: 400;
 }
@@ -116,9 +144,12 @@ small {
     max-width: 100%;
     height: auto;
 }
+.links {
+    min-height: 8rem;
+}
 
 /**************************/
-@media (min-width: 576px){
+@media (min-width: 576px) {
     .card-group {
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
@@ -126,30 +157,31 @@ small {
     .container {
         max-width: 540px;
     }
-    .card-group>.card {
+    .card-group > .card {
         -ms-flex: 1 0 0%;
         flex: 1 0 0%;
         margin-bottom: 0;
     }
-    .card-group>.card:first-child {
+    .card-group > .card:first-child {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    .card-group>.card:first-child .card-header, .card-group>.card:first-child .card-img-top {
+    .card-group > .card:first-child .card-header,
+    .card-group > .card:first-child .card-img-top {
         border-top-right-radius: 0;
     }
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .container {
         max-width: 720px;
     }
 }
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .container {
         max-width: 960px;
     }
 }
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
