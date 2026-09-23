@@ -51,6 +51,15 @@ html.single-album-view .card {
     margin-top: 12rem;
     margin-bottom: 4rem;
 }
+
+@media (max-width: 990px) {
+    .logo.big {
+        font-size: clamp(5rem, 12vw, 10rem);
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+    }
+}
+
 .logo-title,
 .logo-year {
     line-height: 0.82;
@@ -164,7 +173,52 @@ a.logo-link {
         100% 0.1em;
     text-decoration: none;
 }
+@media (max-width: 768px) {
+    .logo.big {
+        display: block;
+        max-width: 100%;
+        font-size: clamp(4rem, 17vw, 7.5rem);
+        margin-top: 4.5rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .logo.big .logo-title,
+    .logo.big .logo-year {
+        display: block;
+        line-height: 0.82;
+        white-space: nowrap;
+    }
+
+    .logo-divider {
+        margin: 12px 0 16px;
+    }
+}
+
 @media (max-width: 576px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .logo.big {
+        display: block;
+        max-width: 100%;
+        font-size: clamp(3.25rem, 19vw, 7rem);
+        margin-top: 4.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .logo.big .logo-title,
+    .logo.big .logo-year {
+        display: block;
+        line-height: 0.82;
+        white-space: nowrap;
+    }
+
+    .logo-divider {
+        margin: 12px 0 16px;
+    }
+
     .navigation .logo {
         display: none;
     }
