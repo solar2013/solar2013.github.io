@@ -268,7 +268,14 @@
             "releaseType": "Single",
             "artist": "chz",
             "releaseYear": 2026,
-            "genre": "Ambient / Electronic"
+            "genre": "Ambient / Electronic",
+            "services": {
+                "SoundCloud": "https://soundcloud.com/solar2013_chz/ngc6357",
+                "Deezer": "https://www.deezer.com/en/album/1074830812",
+                "YouTube Music": "https://music.youtube.com/playlist?list=OLAK5uy_nae5GTLoJz6jEFZbHaBA6uJoCuFiuY-CM",
+                "Apple Music": "https://music.apple.com/ph/album/ngc-6357-pismis-24-1-single/6810299421",
+                "Spotify": "https://open.spotify.com/album/6pSP6WAuLHP2A16TtvB4yp"
+            }
         }
     ]
 }
